@@ -22,7 +22,7 @@ export function Dashboard({
     <div className="app-shell">
       <aside className="rail">
         <div className="brand">
-          <img src="/manus-storage/ironbound-mark_65c5a816.png" alt="" />
+          <img src="/logo.jpg" alt="" />
           <span>
             IRONBOUND
             <br />
@@ -34,12 +34,6 @@ export function Dashboard({
         <div className="rail-item active">
           <ScrollText size={17} /> Personagens{" "}
           <span className="rail-count">{characters.length}/3</span>
-        </div>
-        <div className="rail-item muted">
-          <Swords size={17} /> Kit de encontro
-        </div>
-        <div className="rail-item muted">
-          <CircleHelp size={17} /> Arquivo de regras
         </div>
         <div className="rail-bottom">
           <div className="sync-dot" />
@@ -170,15 +164,6 @@ export function Dashboard({
           )}
         </section>
         <section className="dashboard-foot">
-          <div className="quote-mark">“</div>
-          <div>
-            <p>Um bom registro lembra o que o aventureiro esquece.</p>
-            <span>— Nota de campo, recuperada do Vale Cinzento</span>
-          </div>
-          <img
-            src="/manus-storage/ironbound-dice_594d6277.jpg"
-            alt="Dados e pergaminho em luz de forja"
-          />
         </section>
       </main>
     </div>

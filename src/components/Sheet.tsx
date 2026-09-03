@@ -86,10 +86,10 @@ export function Sheet({
         toast(`${label}: ${die} ${signed(value)} = ${die + value}`, {
             description:
                 die === 20
-                    ? "Critical success."
+                    ? "Sucesso crítico."
                     : die === 1
-                        ? "Critical failure."
-                        : "The die has spoken.",
+                        ? "Falha crítica."
+                        : "Os dados decidiram.",
         });
     };
     const longRest = () => {
@@ -158,7 +158,7 @@ export function Sheet({
                     <ArrowLeft size={16} /> Painel
                 </button>
                 <div className="brand">
-                    <img src="/manus-storage/ironbound-mark_65c5a816.png" alt="" />
+                    <img src="/logo.jpg" alt="" />
                     <span>
                         IRONBOUND
                         <br />
@@ -176,13 +176,13 @@ export function Sheet({
                         if (e.key === "Enter" || e.key === " ") setTab("combat");
                     }}
                 >
-                    <Shield size={17} /> Combate e base
+                    <Shield size={17} /> Combate
                 </div>
                 <div
                     className={`rail-item ${tab === "spells" ? "active" : ""}`}
                     onClick={() => setTab("spells")}
                 >
-                    <WandSparkles size={17} /> Magias e espaços
+                    <WandSparkles size={17} /> Magias
                 </div>
                 <div
                     className={`rail-item ${tab === "inventory" ? "active" : ""}`}
@@ -366,7 +366,7 @@ export function Sheet({
                                                 roll(
                                                     `${a} save`,
                                                     mod(c.abilities[a]) +
-                                                    (a === "DEX" || a === "CON" ? c.proficiency : 0)
+                                                    (a === "DES" || a === "CON" ? c.proficiency : 0)
                                                 )
                                             }
                                         >
@@ -374,7 +374,7 @@ export function Sheet({
                                             <b>
                                                 {signed(
                                                     mod(c.abilities[a]) +
-                                                    (a === "DEX" || a === "CON" ? c.proficiency : 0)
+                                                    (a === "DES" || a === "CON" ? c.proficiency : 0)
                                                 )}
                                             </b>
                                         </button>
@@ -409,7 +409,7 @@ export function Sheet({
                                 </div>
                                 <div className="passive-row">
                                     <span>Percepção passiva</span>
-                                    <b>{10 + mod(c.abilities.WIS) + c.proficiency}</b>
+                                    <b>{10 + mod(c.abilities.SAB) + c.proficiency}</b>
                                 </div>
                                 <div className="passive-row">
                                     <span>Bônus de proficiência</span>
@@ -428,11 +428,11 @@ export function Sheet({
                                 </button>
                                 <button
                                     onClick={() =>
-                                        roll("Perception", mod(c.abilities.WIS) + c.proficiency)
+                                        roll("Perception", mod(c.abilities.SAB) + c.proficiency)
                                     }
                                 >
                                     <CircleHelp size={17} /> Teste de percepção{" "}
-                                    <b>{signed(mod(c.abilities.WIS) + c.proficiency)}</b>
+                                    <b>{signed(mod(c.abilities.SAB) + c.proficiency)}</b>
                                 </button>
                             </div>
                         </aside>
@@ -593,8 +593,8 @@ export function Sheet({
                                     value={equipmentSort}
                                     onChange={e => setEquipmentSort(e.target.value)}
                                 >
-                                    <option value="name">Ordenar by name</option>
-                                    <option value="quantity">Ordenar by quantity</option>
+                                    <option value="name">Ordenar por nome</option>
+                                    <option value="quantity">Ordenar por quantidade</option>
                                 </select>
                             </div>
                             {filteredEquipment.map(item => (
@@ -632,30 +632,30 @@ export function Sheet({
                                 <Flame size={24} />
                             </div>
                             <div className="eyebrow">
-                                {rest === "short" ? "SHORT REST" : "LONG REST"}
+                                {rest === "short" ? "DESCANSO CURTO" : "DESCANSO LONGO"}
                             </div>
                             <h2>
                                 {rest === "short"
-                                    ? "Spend a hit die?"
-                                    : "Close the ledger for the night?"}
+                                    ? "Gastar um dado de vida?"
+                                    : "Fechar o livro de contas para a noite?"}
                             </h2>
                             <p>
                                 {rest === "short"
-                                    ? "A short rest will restore a measured amount of HP from one hit die."
-                                    : "Descanso longo restores HP to maximum, resets spell slots and replenishes resource pools."}
+                                    ? "Um descanso curto restaurará uma quantidade determinada de PV a partir de um dado de vida."
+                                    : "Um descanso longo restaura o PV ao máximo, redefine os espaços de magia e reabastece seus recursos."}
                             </p>
                             <div className="modal-actions">
                                 <button
                                     className="button secondary"
                                     onClick={() => setRest(null)}
                                 >
-                                    Not yet
+                                    Agora não
                                 </button>
                                 <button
                                     className="button primary"
                                     onClick={rest === "short" ? shortRest : longRest}
                                 >
-                                    Confirm rest
+                                    Confirmar descanso
                                 </button>
                             </div>
                         </div>

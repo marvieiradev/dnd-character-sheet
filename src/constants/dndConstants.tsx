@@ -1,7 +1,7 @@
 import { type AbilityKey, type Attack, type Character, type ClassFeature, type Spell } from "../types/dndTypes";
 
 export const STORAGE = "ironbound-ledger.characters.v1";
-export const abilityLabels: AbilityKey[] = ["STR", "DEX", "CON", "INT", "WIS", "CHA"];
+export const abilityLabels: AbilityKey[] = ["FOR", "DES", "CON", "INT", "SAB", "CAR"];
 export const starterCharacters: Character[] = [
   {
     id: "lyra",
@@ -15,9 +15,9 @@ export const starterCharacters: Character[] = [
     ac: 14,
     speed: 30,
     initiative: 3,
-    abilities: { STR: 8, DEX: 14, CON: 13, INT: 12, WIS: 10, CHA: 18 },
+    abilities: { FOR: 8, DES: 14, CON: 13, INT: 12, SAB: 10, CAR: 18 },
     proficiency: 3,
-    spellAbility: "CHA",
+    spellAbility: "CAR",
     spellSlots: [0, 4, 3, 2, 0, 0, 0, 0, 0],
     spentSlots: [0, 1, 0, 0, 0, 0, 0, 0, 0],
     gold: 84,
@@ -43,9 +43,9 @@ export const starterCharacters: Character[] = [
     ac: 18,
     speed: 25,
     initiative: 1,
-    abilities: { STR: 18, DEX: 12, CON: 16, INT: 9, WIS: 11, CHA: 10 },
+    abilities: { FOR: 18, DES: 12, CON: 16, INT: 9, SAB: 11, CAR: 10 },
     proficiency: 2,
-    spellAbility: "WIS",
+    spellAbility: "SAB",
     spellSlots: [0, 0, 0, 0, 0, 0, 0, 0, 0],
     spentSlots: [0, 0, 0, 0, 0, 0, 0, 0, 0],
     gold: 36,

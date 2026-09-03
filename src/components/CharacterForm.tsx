@@ -21,12 +21,12 @@ export function CharacterForm({
   const [initiative, setInitiative] = useState(0);
   const [avatar, setAvatar] = useState<string | undefined>();
   const [abilities, setAbilities] = useState<Record<AbilityKey, number>>({
-    STR: 10,
-    DEX: 10,
+    FOR: 10,
+    DES: 10,
     CON: 10,
     INT: 10,
-    WIS: 10,
-    CHA: 10,
+    SAB: 10,
+    CAR: 10,
   });
   const [slots, setSlots] = useState<number[]>([0, 0, 0, 0, 0, 0, 0, 0, 0]);
   const [spells, setSpells] = useState<Spell[]>([]);
@@ -83,7 +83,7 @@ export function CharacterForm({
       initiative,
       abilities,
       proficiency: level >= 5 ? 3 : 2,
-      spellAbility: "WIS",
+      spellAbility: "SAB",
       spellSlots: slots,
       spentSlots: slots.map(() => 0),
       gold: 0,

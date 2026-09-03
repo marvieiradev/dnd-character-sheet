@@ -1,4 +1,4 @@
-export type AbilityKey = "STR" | "DEX" | "CON" | "INT" | "WIS" | "CHA";
+export type AbilityKey = "FOR" | "DES" | "CON" | "INT" | "SAB" | "CAR";
 export type Tab = "combat" | "spells" | "inventory" | "resources";
 export type Spell = {
   id: string;

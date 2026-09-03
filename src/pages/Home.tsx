@@ -38,8 +38,8 @@ export default function Home() {
     setPersonagens(list => list.map(c => (c.id === next.id ? next : c)));
   const create = () => {
     if (characters.length >= 3)
-      return toast.error("Maximum of 3 characters reached", {
-        description: "Delete one character before creating another.",
+      return toast.error("Limite de 3 personagens atingido", {
+        description: "Exclua um personagem antes de criar outro.",
       });
     setCreating(true);
   };
@@ -47,14 +47,16 @@ export default function Home() {
     setPersonagens(list => [...list, newC]);
     setCreating(false);
     setActive(newC);
-    toast.success(`${newC.name} joined the roster`, {
-      description: "Your new character was saved locally.",
+    toast.success(`${newC.name} entrou no grupo`, {
+      description: "Seu novo personagem foi salvo localmente.",
     });
   };
   const remove = () => {
     if (deleteTarget) {
       setPersonagens(list => list.filter(c => c.id !== deleteTarget.id));
-      toast.success(`${deleteTarget.name} removed from the ledger`);
+      toast.success(`${deleteTarget.name} removido do grupo`, {
+        description: "O personagem foi removido do armazenamento local.",
+      });
       setDeleteTarget(null);
     }
   };
@@ -73,8 +75,8 @@ export default function Home() {
     a.download = `${c.name.toLowerCase().replace(/\s+/g, "-")}.dndchar`;
     a.click();
     URL.revokeObjectURL(a.href);
-    toast.success("Character exported", {
-      description: "Signature and checksum included.",
+    toast.success("Personagem exportado", {
+      description: "Assinatura e checksum incluídos.",
     });
   };
   const importCharacter = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -93,17 +95,17 @@ export default function Home() {
         )
           throw new Error();
         if (characters.length >= 3)
-          return toast.error("Maximum of 3 characters reached", {
-            description: "Delete one character before importing.",
+          return toast.error("Limite de 3 personagens atingido", {
+            description: "Exclua um personagem antes de importar outro.",
           });
         const imported = { ...parsed.payload, id: crypto.randomUUID() };
         setPersonagens(list => [...list, imported]);
-        toast.success("Character imported", {
-          description: `${imported.name} joined the roster.`,
+        toast.success("Personagem importado", {
+          description: `${imported.name} entrou no grupo.`,
         });
       } catch {
         toast.error(
-          "Invalid or corrupted character file. File could not be read."
+          "Arquivo de personagem inválido ou corrompido. O arquivo não pôde ser lido."
         );
       }
     };
