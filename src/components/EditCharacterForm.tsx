@@ -14,6 +14,7 @@ export function EditCharacterForm({
     onSave: (c: Character) => void;
 }) {
     const [draft, setDraft] = useState(clone(initial));
+    console.log("draft", draft.avatar);
     const setField = <K extends keyof Character>(key: K, value: Character[K]) =>
         setDraft(v => ({ ...v, [key]: value }));
     const setAbility = (a: AbilityKey, value: string) =>
@@ -91,7 +92,7 @@ export function EditCharacterForm({
                         </label>
                     </div>
                     <label className="avatar-upload">
-                        {draft.avatar ? (
+                        {draft.avatar !== initials(draft.name) ? (
                             <img
                                 className="avatar-preview"
                                 src={draft.avatar}
@@ -103,7 +104,7 @@ export function EditCharacterForm({
                             </span>
                         )}
                         <span>
-                            <b>{draft.avatar ? "Replace avatar" : "Add an avatar"}</b>
+                            <b>{draft.avatar !== initials(draft.name) ? "Substituir avatar" : "Adicionar avatar"}</b>
                             <small>PNG, JPG ou WebP · máximo 2 MB</small>
                         </span>
                         <input
@@ -113,10 +114,10 @@ export function EditCharacterForm({
                                 const file = e.target.files?.[0];
                                 if (!file) return;
                                 if (!file.type.startsWith("image/"))
-                                    return toast.error("Choose an image file");
+                                    return toast.error("Escolha um arquivo de imagem");
                                 if (file.size > 2 * 1024 * 1024)
-                                    return toast.error("Avatar is too large", {
-                                        description: "Use an image up to 2 MB.",
+                                    return toast.error("A imagem é muito grande!", {
+                                        description: "Use uam imagem menor que 2 MB.",
                                     });
                                 const reader = new FileReader();
                                 reader.onload = () => setField("avatar", String(reader.result));
@@ -125,6 +126,13 @@ export function EditCharacterForm({
                             hidden
                         />
                     </label>
+                    <div className="remove-avatar">
+                        <button type="button" className="button secondary" onClick={() => setField("avatar", initials(draft.name))}>
+                            <Trash2 size={15} />
+                            Remover avatar
+                        </button>
+                    </div>
+
                 </div>
                 <div className="form-section">
                     <span className="section-kicker">COMBATE E PROGRESSÃO</span>

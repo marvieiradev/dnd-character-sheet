@@ -1,4 +1,3 @@
-/* Ironbound Ledger: página operacional assimétrica; carvão, âmbar de forja, serif display e dados escaneáveis. */
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import {
@@ -157,7 +156,7 @@ export function Sheet({
                 <button className="back-btn" onClick={onBack}>
                     <ArrowLeft size={16} /> Painel
                 </button>
-                <div className="brand">
+                <div className="brand mb-2">
                     <img src="/logo.jpg" alt="" />
                     <span>
                         IRONBOUND
