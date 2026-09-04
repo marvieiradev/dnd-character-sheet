@@ -1,63 +1,13 @@
 import { type AbilityKey, type Attack, type Character, type ClassFeature, type Spell } from "../types/dndTypes";
+import { defaultStarterCharacters } from "./defaultStarterCharacters";
 
 export const STORAGE = "ironbound-ledger.characters.v1";
 export const abilityLabels: AbilityKey[] = ["FOR", "DES", "CON", "INT", "SAB", "CAR"];
 export const starterCharacters: Character[] = [
-  {
-    id: "lyra",
-    name: "Lyra Vex",
-    race: "Tiefling",
-    className: "Warlock",
-    level: 5,
-    hp: 31,
-    maxHp: 38,
-    tempHp: 4,
-    ac: 14,
-    speed: 30,
-    initiative: 3,
-    abilities: { FOR: 8, DES: 14, CON: 13, INT: 12, SAB: 10, CAR: 18 },
-    proficiency: 3,
-    spellAbility: "CAR",
-    spellSlots: [0, 4, 3, 2, 0, 0, 0, 0, 0],
-    spentSlots: [0, 1, 0, 0, 0, 0, 0, 0, 0],
-    gold: 84,
-    silver: 12,
-    copper: 8,
-    avatar: "LV",
-    spells: ["Eldritch Blast", "Hex", "Armor of Agathys", "Hunger of Hadar"],
-    equipment: [
-      { name: "Cajado de freixo", qty: 1 },
-      { name: "Kit de aventureiro", qty: 1 },
-      { name: "Poção de cura", qty: 2 },
-    ],
-  },
-  {
-    id: "bram",
-    name: "Bram Stonehand",
-    race: "Anão",
-    className: "Fighter",
-    level: 4,
-    hp: 42,
-    maxHp: 42,
-    tempHp: 0,
-    ac: 18,
-    speed: 25,
-    initiative: 1,
-    abilities: { FOR: 18, DES: 12, CON: 16, INT: 9, SAB: 11, CAR: 10 },
-    proficiency: 2,
-    spellAbility: "SAB",
-    spellSlots: [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    spentSlots: [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    gold: 36,
-    silver: 4,
-    copper: 16,
-    avatar: "BS",
-    spells: [],
-    equipment: [
-      { name: "Machado de batalha", qty: 1 },
-      { name: "Escudo de carvalho", qty: 1 },
-    ],
-  },
+...defaultStarterCharacters.map(character => ({
+  ...character,
+  spellAbility: character.spellAbility as AbilityKey,
+}))
 ];
 export const mod = (score: number) => Math.floor((score - 10) / 2);
 export const signed = (n: number) => (n >= 0 ? `+${n}` : `${n}`);
@@ -79,7 +29,7 @@ export const defaultAttacks = (c: Character): Attack[] =>
         },
         {
           id: "blast",
-          name: "Eldritch Blast",
+          name: "Explosão Mística",
           bonus: 7,
           damage: "1d10",
           type: "force",
@@ -91,7 +41,7 @@ export const classCatalog: Record<
 > = {
   bard: {
     spells: ["Zombaria viciosa", "Palavra curativa", "Sussurros dissonantes"],
-    features: ["Inspiração de bardo", "Jack of All Trades"],
+    features: ["Inspiração de bardo", "Profissional versátil"],
     slots: [0, 2, 0, 0, 0, 0, 0, 0, 0],
   },
   cleric: {
