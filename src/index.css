@@ -45,6 +45,32 @@ body {
   font-family: "IBM Plex Sans", sans-serif;
 }
 
+* {
+  scrollbar-width: bold;
+  scrollbar-color: #d97706 transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 15px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #d97706;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 button,
 input {
   font: inherit;

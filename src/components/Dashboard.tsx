@@ -1,4 +1,4 @@
-import { ScrollText, Swords, CircleHelp, Import, Plus, Trash2, ChevronRight, Download } from "lucide-react";
+import { Import, Plus, Trash2, ChevronRight, Download } from "lucide-react";
 import { avatarLabel, signed } from "../constants/dndConstants";
 import type { Character } from "../types/dndTypes";
 import { IconButton } from "./IconButton";
@@ -25,7 +25,7 @@ export function Dashboard({
         <header className="topbar">
           <div>
             <div className="brand">
-              <img src="/logo.jpg" alt="" />
+              <img src="/logo.webp" alt="" />
               <span>
                 IRONBOUND
                 <br />

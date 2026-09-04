@@ -157,7 +157,7 @@ export function Sheet({
                     <ArrowLeft size={16} /> Painel
                 </button>
                 <div className="brand mb-2">
-                    <img src="/logo.jpg" alt="" />
+                    <img src="/logo.webp" alt="" />
                     <span>
                         IRONBOUND
                         <br />
