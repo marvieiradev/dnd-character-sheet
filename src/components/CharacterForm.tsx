@@ -2,7 +2,13 @@ import { useState } from "react";
 import type { AbilityKey, Character, ClassFeature, Spell } from "../types/dndTypes";
 import { X, Sparkles, Plus, Trash2 } from "lucide-react";
 import { toast } from "sonner";
-import { spellFromName, featureFromName, classCatalog, initials, abilityLabels } from "../constants/dndConstants";
+import {
+  spellFromName,
+  featureFromName,
+  classCatalog,
+  initials,
+  abilityLabels,
+} from "../constants/dndConstants";
 
 export function CharacterForm({
   onCancel,
@@ -37,10 +43,15 @@ export function CharacterForm({
       [a]: Math.max(1, Math.min(30, Number(value) || 0)),
     }));
   const applyTemplate = () => {
-    const template = template(className);
-    setSlots([...template.slots]);
-    setSpells(template.spells.map(spellFromName));
-    setFeatures(template.features.map(featureFromName));
+    const classTemplate =
+      classCatalog[className as keyof typeof classCatalog];
+    if (!classTemplate) {
+      toast.error("Selecione uma classe primeiro");
+      return;
+    }
+    setSlots([...classTemplate.slots]);
+    setSpells(classTemplate.spells.map(spellFromName));
+    setFeatures(classTemplate.features.map(featureFromName));
     toast.success("Modelo aplicado", {
       description:
         "Magias, habilidades e espaços foram preenchidos. Você pode editar tudo antes de criar.",

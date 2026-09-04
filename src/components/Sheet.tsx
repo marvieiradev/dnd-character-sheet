@@ -279,7 +279,6 @@ export function Sheet({
                                     </div>
                                     <div className="temp-hp">
                                         <span>PV TEMPORÁRIOS</span>
-                                        <b>{c.tempHp}</b>
                                         <div className="temp-hp-controls">
                                             <button
                                                 type="button"
@@ -288,6 +287,7 @@ export function Sheet({
                                             >
                                                 −
                                             </button>
+                                            <b>{c.tempHp}</b>
                                             <button
                                                 type="button"
                                                 onClick={() => tempHpChange(1)}

@@ -103,7 +103,7 @@ export function Dashboard({
               </div>
               <div className="card-stats">
                 <div>
-                  <span>STATUS DE PV</span>
+                  <span>PONTOS DE VIDA</span>
                   <strong>
                     {c.hp}
                     <small> / {c.maxHp}</small>
@@ -117,7 +117,7 @@ export function Dashboard({
                   </div>
                 </div>
                 <div>
-                  <span>CLASSE DE ARMADURA</span>
+                  <span>ARMADURA</span>
                   <strong>{c.ac}</strong>
                 </div>
                 <div>
