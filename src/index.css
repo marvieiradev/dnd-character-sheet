@@ -386,6 +386,13 @@ h1 em {
   height: 62px;
   font-size: 17px;
 }
+.remove-avatar{
+  width: 100%;
+  display: flex;
+  margin-top: 8px;
+  align-items: center;
+  justify-content: center;
+}
 .card-meta {
   min-width: 0;
   flex: 1;
@@ -542,7 +549,7 @@ h1 em {
   overflow: hidden;
 }
 .dashboard-foot::after {
-  content: "FIELD NOTE / 05";
+  content: "© 2026";
   position: absolute;
   right: 176px;
   top: 11px;

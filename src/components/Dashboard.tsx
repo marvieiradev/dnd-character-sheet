@@ -20,34 +20,19 @@ export function Dashboard({
 }) {
   return (
     <div className="app-shell">
-      <aside className="rail">
-        <div className="brand">
-          <img src="/logo.jpg" alt="" />
-          <span>
-            IRONBOUND
-            <br />
-            <b>LEDGER</b>
-          </span>
-        </div>
-        <div className="rail-rule" />
-        <div className="rail-label">DIÁRIO DA CAMPANHA</div>
-        <div className="rail-item active">
-          <ScrollText size={17} /> Personagens{" "}
-          <span className="rail-count">{characters.length}/3</span>
-        </div>
-        <div className="rail-bottom">
-          <div className="sync-dot" />
-          <span>
-            Salvo localmente
-            <br />
-            <small>Pronto para uso offline</small>
-          </span>
-        </div>
-      </aside>
+
       <main className="main-content">
         <header className="topbar">
           <div>
-            <div className="eyebrow">REGISTRO DO AVENTUREIRO · 5E</div>
+            <div className="brand">
+              <img src="/logo.jpg" alt="" />
+              <span>
+                IRONBOUND
+                <br />
+                <b>LEDGER</b>
+              </span>
+            </div>
+            <div className="eyebrow mt-4">REGISTRO DO AVENTUREIRO · 5E</div>
             <h1>
               Sua campanha, <em>pronta para a próxima sessão.</em>
             </h1>
