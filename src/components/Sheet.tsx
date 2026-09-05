@@ -468,7 +468,7 @@ export function Sheet({
                         <section className="panel">
                             <div className="panel-heading">
                                 <span className="section-kicker">ESPAÇOS DE MAGIA</span>
-                                <span className="hint">Disponíveis / gastos</span>
+                                <span className="hint">Disponíveis / Gastos</span>
                             </div>
                             <div className="slots-list">
                                 {c.spellSlots.map(
@@ -529,15 +529,15 @@ export function Sheet({
                             </div>
                             <div className="currency-grid">
                                 <div>
-                                    <span>CP</span>
+                                    <span>PC</span>
                                     <b>{c.copper}</b>
                                 </div>
                                 <div>
-                                    <span>SP</span>
+                                    <span>PP</span>
                                     <b>{c.silver}</b>
                                 </div>
                                 <div>
-                                    <span>GP</span>
+                                    <span>PO</span>
                                     <b>{c.gold}</b>
                                 </div>
                             </div>
@@ -557,9 +557,9 @@ export function Sheet({
                                     value={attackSort}
                                     onChange={e => setAttackSort(e.target.value)}
                                 >
-                                    <option value="name">Ordenar by name</option>
-                                    <option value="bonus">Ordenar by bonus</option>
-                                    <option value="damage">Ordenar by damage</option>
+                                    <option value="name">Ordenar por nome</option>
+                                    <option value="bonus">Ordenar por bônus</option>
+                                    <option value="damage">Ordenar por dano</option>
                                 </select>
                             </div>
                             {filteredAttacks.map(attack => (

@@ -281,7 +281,7 @@ export function RecursosPanel({
                                         name: "Novo ataque",
                                         bonus: 0,
                                         damage: "1d6",
-                                        type: "physical",
+                                        type: "físico",
                                     },
                                 ],
                             })
@@ -359,7 +359,7 @@ export function RecursosPanel({
                                         id: crypto.randomUUID(),
                                         name: "Nova habilidade",
                                         description: "",
-                                        type: "passive",
+                                        type: "passiva",
                                         uses: 0,
                                         used: 0,
                                         recoverShort: true,
@@ -377,10 +377,10 @@ export function RecursosPanel({
                         Tipo{" "}
                         {select(featureType, setFeatureType, [
                             ["all", "Todos os tipos"],
-                            ["passive", "Passiva"],
-                            ["action", "Ação"],
-                            ["reaction", "Reação"],
-                            ["bonus", "Ação bônus"],
+                            ["passiva", "Passiva"],
+                            ["ação", "Ação"],
+                            ["reação", "Reação"],
+                            ["bônus", "Ação bônus"],
                         ])}
                     </label>
                     <label>
@@ -399,7 +399,7 @@ export function RecursosPanel({
                                     {field(feature.name, value =>
                                         updateFeature(feature.id, { name: value })
                                     )}
-                                    {field(feature.type ?? "passive", value =>
+                                    {field(feature.type ?? "passiva", value =>
                                         updateFeature(feature.id, { type: value })
                                     )}
                                     <label className="check-field">

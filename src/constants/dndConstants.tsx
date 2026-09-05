@@ -25,14 +25,14 @@ export const defaultAttacks = (c: Character): Attack[] =>
           name: "Cajado de freixo",
           bonus: 6,
           damage: "1d6 + 3",
-          type: "bludgeoning",
+          type: "contundente",
         },
         {
           id: "blast",
           name: "Explosão Mística",
           bonus: 7,
           damage: "1d10",
-          type: "force",
+          type: "força",
         },
       ];
 export const classCatalog: Record<
@@ -111,7 +111,7 @@ export const featureFromName = (name: string): ClassFeature => ({
   id: crypto.randomUUID(),
   name,
   description: "",
-  type: "passive",
+  type: "passiva",
   uses: 0,
   used: 0,
   recoverShort: true,
