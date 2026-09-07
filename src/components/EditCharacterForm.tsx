@@ -2,7 +2,7 @@ import { useState } from "react";
 import type { AbilityKey, Character } from "../types/dndTypes";
 import { toast } from "sonner";
 import { Plus, ScrollText, Trash2, X } from "lucide-react";
-import { abilityLabels, clone, initials } from "../constants/dndConstants";
+import { abilityLabels, classCatalog, clone, initials } from "../constants/dndConstants";
 
 export function EditCharacterForm({
     initial,
@@ -42,6 +42,10 @@ export function EditCharacterForm({
                     : item
             ),
         }));
+    function setClassNome(value: string): void {
+        throw new Error("Function not implemented.");
+    }
+
     return (
         <div className="modal-backdrop">
             <form
@@ -85,10 +89,32 @@ export function EditCharacterForm({
                         </label>
                         <label>
                             Classe
-                            <input
+                            <select
                                 value={draft.className}
-                                onChange={e => setField("className", e.target.value)}
-                            />
+                                 onChange={e => setField("className", e.target.value)}
+                                 className="class-select"
+                            >
+                                {Object.keys(classCatalog).map(item => (
+                                    <option key={item} value={item}>
+                                        {
+                                            (
+                                                {
+                                                    bard: "Bardo",
+                                                    cleric: "Clérigo",
+                                                    druid: "Druida",
+                                                    fighter: "Guerreiro",
+                                                    paladin: "Paladino",
+                                                    ranger: "Patrulheiro",
+                                                    rogue: "Ladino",
+                                                    sorcerer: "Feiticeiro",
+                                                    warlock: "Bruxo",
+                                                    wizard: "Mago",
+                                                } as Record<string, string>
+                                            )[item]
+                                        }
+                                    </option>
+                                ))}
+                            </select>
                         </label>
                     </div>
                     <label className="avatar-upload">

@@ -87,6 +87,17 @@ input:focus-visible {
   outline-offset: 3px;
 }
 
+.class-select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #334052;
+  background: #0d141e;
+  color: #dfe3de;
+  font:
+    10px "IBM Plex Mono",
+    monospace;
+}
+
 .app-shell {
   min-height: 100vh;
   display: flex;

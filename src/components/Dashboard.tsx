@@ -1,5 +1,5 @@
 import { Import, Plus, Trash2, ChevronRight, Download } from "lucide-react";
-import { avatarLabel, signed } from "../constants/dndConstants";
+import { avatarLabel, classTraductions, signed } from "../constants/dndConstants";
 import type { Character } from "../types/dndTypes";
 import { IconButton } from "./IconButton";
 
@@ -89,7 +89,7 @@ export function Dashboard({
                   </span>
                   <h2>{c.name}</h2>
                   <p>
-                    {c.race} <span>·</span> {c.className} <span>·</span> Nível{" "}
+                    {c.race} <span>·</span> {classTraductions[c.className as keyof typeof classTraductions]} <span>·</span> Nível{" "}
                     {c.level}
                   </p>
                 </div>

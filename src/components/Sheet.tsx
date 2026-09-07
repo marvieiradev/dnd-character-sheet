@@ -398,7 +398,7 @@ export function Sheet({
                                     <span>DESLOCAMENTO</span>
                                     <strong>
                                         {c.speed}
-                                        <small> ft</small>
+                                        <span> mt</span>
                                     </strong>
                                 </div>
                             </div>

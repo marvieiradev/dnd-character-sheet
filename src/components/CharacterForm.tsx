@@ -100,7 +100,7 @@ export function CharacterForm({
       gold: 0,
       silver: 0,
       copper: 0,
-      avatar,
+      avatar: initials(name),
       spells: spells.map(s => s.name),
       spellbook: spells,
       classFeatures: features,

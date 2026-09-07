@@ -35,6 +35,18 @@ export const defaultAttacks = (c: Character): Attack[] =>
           type: "força",
         },
       ];
+      export const classTraductions={
+        bard: "Bardo",
+        cleric: "Clérigo",
+        druid: "Druida",
+        fighter: "Guerreiro",
+        paladin: "Paladino",
+        ranger: "Patrulheiro",
+        rogue: "Ladino",
+        sorcerer: "Feiticeiro",
+        warlock: "Bruxo",
+        wizard: "Mago"
+      }
 export const classCatalog: Record<
   string,
   { spells: string[]; features: string[]; slots: number[] }
