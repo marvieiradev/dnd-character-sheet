@@ -298,9 +298,14 @@ export function RecursosPanel({
                                     {field(attack.name, value =>
                                         updateAttack(attack.id, { name: value })
                                     )}
-                                    {field(attack.type, value =>
-                                        updateAttack(attack.id, { type: value })
-                                    )}
+                                    <select
+                                        value={attack.type}
+                                        onChange={e => updateAttack(attack.id, { type: e.target.value })}
+                                        className="select attack"
+                                    >
+                                        <option value="físico">Físico</option>
+                                        <option value="mágico">Mágico</option>
+                                    </select>
                                 </div>
                                 <div className="resource-inline-grid">
                                     <label>

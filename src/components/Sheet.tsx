@@ -565,7 +565,7 @@ export function Sheet({
                             {filteredAttacks.map(attack => (
                                 <div className="weapon-row" key={attack.id}>
                                     <b>{attack.name}</b>
-                                    <span>+{attack.bonus} to hit</span>
+                                    <span>+{attack.bonus} por acerto</span>
                                     <span>
                                         {attack.damage} {attack.type}
                                     </span>

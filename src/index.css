@@ -87,15 +87,20 @@ input:focus-visible {
   outline-offset: 3px;
 }
 
-.class-select {
+.select {
   width: 100%;
-  padding: 10px;
+  padding: 10.5px;
   border: 1px solid #334052;
   background: #0d141e;
   color: #dfe3de;
   font:
     10px "IBM Plex Mono",
     monospace;
+}
+
+.select.attack {
+  padding: 9px;
+  background: #1b2533;
 }
 
 .app-shell {
