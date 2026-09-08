@@ -52,9 +52,10 @@ export function CharacterForm({
     setSlots([...classTemplate.slots]);
     setSpells(classTemplate.spells.map(spellFromName));
     setFeatures(classTemplate.features.map(featureFromName));
+    setAbilities({ ...classTemplate.abilities });
     toast.success("Modelo aplicado", {
       description:
-        "Magias, habilidades e espaços foram preenchidos. Você pode editar tudo antes de criar.",
+        "Magias, habilidades e espaços foram preenchidos automaticamente. Você pode editar tudo antes de criar.",
     });
   };
   const addSpell = () =>
@@ -148,6 +149,7 @@ export function CharacterForm({
               <select
                 value={className}
                 onChange={e => setClassNome(e.target.value)}
+                className="select"
               >
                 <option value="">Selecione uma classe</option>
                 {Object.keys(classCatalog).map(item => (
@@ -155,10 +157,12 @@ export function CharacterForm({
                     {
                       (
                         {
+                          artificer: "Artífice",
                           bard: "Bardo",
                           cleric: "Clérigo",
                           druid: "Druida",
                           fighter: "Guerreiro",
+                          monk: "Monge",
                           paladin: "Paladino",
                           ranger: "Patrulheiro",
                           rogue: "Ladino",

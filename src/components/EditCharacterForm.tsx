@@ -91,18 +91,20 @@ export function EditCharacterForm({
                             Classe
                             <select
                                 value={draft.className}
-                                 onChange={e => setField("className", e.target.value)}
-                                 className="class-select"
+                                onChange={e => setField("className", e.target.value)}
+                                className="select"
                             >
                                 {Object.keys(classCatalog).map(item => (
                                     <option key={item} value={item}>
                                         {
                                             (
                                                 {
+                                                    artificer: "Artífice",
                                                     bard: "Bardo",
                                                     cleric: "Clérigo",
                                                     druid: "Druida",
                                                     fighter: "Guerreiro",
+                                                    monk: "Monge",
                                                     paladin: "Paladino",
                                                     ranger: "Patrulheiro",
                                                     rogue: "Ladino",
