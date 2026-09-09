@@ -1,75 +1,59 @@
-# React + TypeScript + Vite
+# Ironbound Ledger
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Uma aplicação web para gerenciar e visualizar fichas de personagem de Dungeons & Dragons. O projeto foi criado com HTML, CSS e JavaScript puro, oferecendo uma interface leve e responsiva para personagem, atributos, perícias, equipamento e status de combate.
 
-Currently, two official plugins are available:
+## Visão Geral
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+O Ironbound Ledger permite criar ou atualizar uma ficha de personagem com os principais campos de RPG:
 
-## React Compiler
+- Nome do personagem
+- Raça, classe e nível
+- Pontos de vida e vida temporária
+- Atributos básicos e modificadores
+- Perícias e proficiência
+- Inventário e equipamento
+- Armadura, iniciativa, deslocamento e bônus de ataque
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tecnologias
 
-## Expanding the ESLint configuration
+- React
+- Typescript
+- TailwindCSS
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Estrutura do Projeto
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```text
+.
+├── index.html
+├── styles.css
+├── main.js
+└── README.md
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+## Como Executar
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. Clone o repositório.
+2. Instale as dependencias execurando:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm run dev
 ```
+3. Para rodar o projeto, execute:
+
+```bash
+npm run dev
+```
+
+Depois acesse `http://localhost:http://localhost:5173/5173`.
+
+## Funcionalidades
+
+- Edição de ficha de personagem
+- Cálculo de modificadores de atributos
+- Visualização organizada das informações do personagem
+- Layout responsivo para desktop e mobile
+
+## Licença
+
+Este projeto está disponível sob a licença MIT.
+
