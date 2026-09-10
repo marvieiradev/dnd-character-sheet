@@ -1,6 +1,6 @@
-# Ironbound Ledger
+# Ironbound Ledger (Ficha de Personagem D&D)
 
-Uma aplicação web para gerenciar e visualizar fichas de personagem de Dungeons & Dragons. O projeto foi criado com HTML, CSS e JavaScript puro, oferecendo uma interface leve e responsiva para personagem, atributos, perícias, equipamento e status de combate.
+Uma aplicação web para gerenciar e visualizar fichas interativas de personagem de Dungeons & Dragons. O projeto foi criado oferecendo uma interface leve e responsiva para personagem, atributos, perícias, equipamento e status de combate.
 
 ## Visão Geral
 
@@ -20,16 +20,6 @@ O Ironbound Ledger permite criar ou atualizar uma ficha de personagem com os pri
 - Typescript
 - TailwindCSS
 
-## Estrutura do Projeto
-
-```text
-.
-├── index.html
-├── styles.css
-├── main.js
-└── README.md
-```
-
 ## Como Executar
 
 1. Clone o repositório.
@@ -44,7 +34,7 @@ npm run dev
 npm run dev
 ```
 
-Depois acesse `http://localhost:http://localhost:5173/5173`.
+Depois acesse `http://localhost:5173`.
 
 ## Funcionalidades
 
